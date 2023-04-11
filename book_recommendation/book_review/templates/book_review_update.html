@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% block title %}Update Book Review{% endblock %}</title>
+</head>
+<body>
+{% block title_content %}===Update Book Review==={% endblock %}
+<form action="{% url 'update_review' object.id %}" method="post">
+    {% csrf_token %}
+    <div class="from-group">
+        <label for="text">
+            <strong>Review<Strong>
+        </label>
+        <textarea 
+            type="text"
+            clas="form-control"
+            id="text"
+            name="text"
+            rows="2"></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">post</button>
+</form>
+</body>
+</html>

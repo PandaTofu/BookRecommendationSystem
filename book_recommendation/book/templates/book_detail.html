@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% block title %}Book Info{% endblock %}</title>
+</head>
+<body>
+{% block title_content %}===Book Info==={% endblock %}
+{% block body_content %}
+    <div class="card text-white bg-danger" style="width: 18rem;">
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">Book：{{ book.book_name }}</li>
+            <li class="list-group-item">Price：{{ book.price }}</li>
+            <li class="list-group-item">Brief Introduction：{{ book.brief_introduction }}</li>
+        </ul>
+    </div>
+{% endblock %}
+</body>
+</html>

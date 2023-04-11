@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% block title %}Book List{% endblock %}</title>
+</head>
+<body>
+{% block title_content %}===Book List==={% endblock %}
+{% block body_content %}
+    <table class="table">
+        <thead>
+        <tr>
+            <th scope="col">Book Name</th>
+            <th scope="col">Price</th>
+            <th scope="col">Book Type</th>
+            <th scope="col"></th>
+        </tr>
+        </thead>
+        <tbody>
+        <!-- 默认是object_list 模板语言for循环语法 -->
+        {% for item in object_list %}
+            <tr>
+                
+                <td><a href="{% url 'book_detail' item.pk  %}">{{ item.book_name }}</a></td>
+                <td>{{ item.price }}</td>
+                <td>{{ item.b_type.book_type }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
+</body>
+</html>

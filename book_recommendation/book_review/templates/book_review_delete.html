@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% block title %}Delete Book Review{% endblock %}</title>
+</head>
+<body>
+{% block title_content %}===Delete Book Review==={% endblock %}
+<form action="{% url 'delete_review' object.id %}" method="post">
+    {% csrf_token %}
+    <button type="submit" class="btn btn-primary">delete</button>
+</form>
+</body>
+</html>

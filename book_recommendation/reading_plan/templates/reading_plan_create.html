@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% block title %}Create Reading Plan{% endblock %}</title>
+</head>
+<body>
+{% block title_content %}===Create Reading Plan==={% endblock %}
+<form action="{% url 'create_plan' %}" method="post">
+    {% csrf_token %}
+    <div class="from-group">
+        Book name:  <input type="text" id='book_name' name="book_name" />
+        Period:  <input type="int" id='period' name="period" />
+        Pages per day:  <input type="int" id='pages_per_day' name="pages_per_day" />
+    </div>
+    <button type="submit" class="btn btn-primary">post</button>
+</form>
+</body>
+</html>
